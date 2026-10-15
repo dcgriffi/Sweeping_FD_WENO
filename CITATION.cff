@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper below."
+title: "Sweeping positivity-preserving FD WENO for the Euler equations"
+type: software
+authors:
+  - family-names: Griffin
+    given-names: D. Chloe
+  - family-names: Shu
+    given-names: Chi-Wang
+license: MIT
+preferred-citation:
+  type: article
+  title: "A sweeping positivity-preserving high-order finite difference WENO scheme for Euler equations"
+  authors:
+    - family-names: Griffin
+      given-names: D. Chloe
+    - family-names: Shu
+      given-names: Chi-Wang
+  journal: "Research in the Mathematical Sciences"
+  volume: 13
+  start: 38
+  year: 2026
+  doi: "10.1007/s40687-026-00621-2"

@@ -1,0 +1,201 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"pre.dat"'
+$!VarSet |LFDSVL1| = '"X" "Y" "PRESSURE"'
+$!SetStyleBase Factory
+$!GlobalPaper
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page
+  Name = 'PressurePlot'
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = Yes
+    ShowGrid = No
+    ShowRuler = Yes
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 10
+      Y2 = 8.25
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = Cartesian2D
+  IncludeText = No
+  IncludeGeom = No
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!FrameLayout
+  ShowBorder = No
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 0.7
+    Y = 1
+    }
+  Width = 10
+  Height = 7
+$!PlotType = Cartesian2D
+$!FrameName  = 'Pressure Frame'
+$!GlobalTime
+  SolutionTime = 0
+$!ActiveFieldMaps =  [1]
+$!GlobalContour  1
+  Var = 3
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      Y = 60
+      }
+    Header
+      {
+      TextShape
+        {
+        Height = 2
+        }
+      }
+    Box
+      {
+      BoxType = None
+      }
+    }
+  ColorMapFilter
+    {
+    ColorMapDistribution = Continuous
+    ContinuousColor
+      {
+      CMin = -2
+      CMax = 10
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+13
+-2
+-1
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+$!FieldMap  [1]
+  Mesh
+    {
+    Show = No
+    Color = Red
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Red
+    }
+  Vector
+    {
+    Color = Red
+    }
+  Scatter
+    {
+    Color = Red
+    }
+  Shade
+    {
+    Color = Custom2
+    }
+  EdgeLayer
+    {
+    Show = No
+    Color = Red
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = KPlanes
+    }
+$!TwoDAxis
+  XDetail
+    {
+    VarNum = 1
+    }
+  YDetail
+    {
+    VarNum = 2
+    }
+$!View Fit
+$!TwoDAxis
+  DepXToYRatio = 0.75
+$!TwoDAxis
+  XDetail
+    {
+    CoordScale = Linear
+    RangeMin = 0.00062500000000000001301
+    RangeMax = 0.99947487499999998484
+    AutoGrid = No
+    GRSpacing = 0.1
+    Title
+      {
+      TitleMode = UseText
+      Text = 'X'
+      TextShape
+        {
+        Height = 7
+        }
+      }
+    }
+$!TwoDAxis
+  YDetail
+    {
+    CoordScale = Linear
+    RangeMin = -0.24937500000000001332
+    RangeMax = 0.28900508262500002044
+    AutoGrid = No
+    GRSpacing = 0.1
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Y'
+      TextShape
+        {
+        Height = 7
+        }
+      }
+    }
+$!FieldLayers
+  ShowMesh = No
+  ShowContour = Yes
+  ShowEdge = No
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config

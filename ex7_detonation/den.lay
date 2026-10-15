@@ -1,0 +1,695 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"den.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3"'
+$!SetStyleBase Factory
+$!CreateColorMap 
+  Name = 'Small Rainbow__modified (1)'
+  NumControlPoints = 5
+  ControlPoint 1
+    {
+    ColorMapFraction = 0
+    LeadRGB
+      {
+      R = 0
+      G = 0
+      B = 255
+      }
+    TrailRGB
+      {
+      R = 0
+      G = 0
+      B = 255
+      }
+    }
+  ControlPoint 2
+    {
+    ColorMapFraction = 0.3324
+    LeadRGB
+      {
+      R = 0
+      G = 255
+      B = 255
+      }
+    TrailRGB
+      {
+      R = 0
+      G = 255
+      B = 255
+      }
+    }
+  ControlPoint 3
+    {
+    ColorMapFraction = 0.5169
+    LeadRGB
+      {
+      R = 0
+      G = 255
+      B = 0
+      }
+    TrailRGB
+      {
+      R = 0
+      G = 255
+      B = 0
+      }
+    }
+  ControlPoint 4
+    {
+    ColorMapFraction = 0.6913
+    LeadRGB
+      {
+      R = 255
+      G = 255
+      B = 0
+      }
+    TrailRGB
+      {
+      R = 255
+      G = 255
+      B = 0
+      }
+    }
+  ControlPoint 5
+    {
+    ColorMapFraction = 1
+    LeadRGB
+      {
+      R = 255
+      G = 0
+      B = 0
+      }
+    TrailRGB
+      {
+      R = 255
+      G = 0
+      B = 0
+      }
+    }
+$!GlobalPaper 
+  PaperSizeInfo
+    {
+    Letter
+      {
+      Width = 8.5
+      Height = 11
+      LeftHardClipOffset = 0.125
+      RightHardClipOffset = 0.125
+      TopHardClipOffset = 0.125
+      BottomHardClipOffset = 0.125
+      }
+    }
+$!Page 
+  Name = ''
+  PaperAttributes
+    {
+    BackgroundColor = White
+    IsTransparent = Yes
+    OrientPortrait = Yes
+    ShowGrid = Yes
+    ShowRuler = No
+    ShowPaper = No
+    PaperSize = Letter
+    RulerSpacing = OneInch
+    PaperGridSpacing = HalfInch
+    RegionInWorkArea
+      {
+      X1 = -0.05
+      Y1 = -0.05
+      X2 = 8.55
+      Y2 = 11.05
+      }
+    }
+### Frame Number 1 ###
+$!ReadDataSet  '|LFDSFN1|'
+  InitialPlotType = Cartesian2D
+  IncludeText = No
+  IncludeGeom = No
+  ResetStyle = No
+  AssignStrandIDs = Yes
+  VarLoadMode = ByName
+  VarNameList = '|LFDSVL1|'
+$!RemoveVar |LFDSVL1|
+$!RemoveVar |LFDSFN1|
+$!RenameDataSetVar 
+  Var = 3
+  Name = 'DENSITY'
+$!FrameLayout 
+  ShowBorder = No
+  ShowHeader = No
+  HeaderColor = Red
+  XYPos
+    {
+    X = 0.125
+    Y = 1.8333
+    }
+  Width = 8.25
+  Height = 7.3333
+$!ThreeDAxis 
+  AspectRatioLimit = 25
+  BoxAspectRatioLimit = 25
+$!PlotType  = Cartesian2D
+$!FrameName  = 'Frame 001'
+$!GlobalTime 
+  SolutionTime = 0
+$!ActiveFieldMaps  =  [1]
+$!GlobalRGB 
+  RangeMin = 0
+  RangeMax = 1
+$!GlobalContour  1
+  Var = 3
+  ColorMapName = 'Small Rainbow__modified (1)'
+  DefNumLevels = 20
+  Labels
+    {
+    NumFormat
+      {
+      Formatting = FixedFloat
+      Precision = 2
+      }
+    }
+  Legend
+    {
+    Show = Yes
+    XYPos
+      {
+      X = 100
+      Y = 83.445
+      }
+    OverlayBarGrid = No
+    Header
+      {
+      TextShape
+        {
+        Height = 5.5
+        }
+      }
+    NumberTextShape
+      {
+      Height = 4.5
+      }
+    Box
+      {
+      BoxType = None
+      }
+    AutoResize = Yes
+    LabelLocation = ColorMapDivisions
+    LabelIncrement = 1510
+    }
+  ColorCutoff
+    {
+    RangeMin = 12.9359873493
+    RangeMax = 38.0080843914
+    }
+  ColorMapFilter
+    {
+    ColorMapDistribution = Continuous
+    ContinuousColor
+      {
+      CMin = 0.07537114
+      CMax = 13
+      }
+    }
+$!ContourLevels New
+  ContourGroup = 1
+  RawData
+20
+0
+0.684210526316
+1.36842105263
+2.05263157895
+2.73684210526
+3.42105263158
+4.10526315789
+4.78947368421
+5.47368421053
+6.15789473684
+6.84210526316
+7.52631578947
+8.21052631579
+8.89473684211
+9.57894736842
+10.2631578947
+10.9473684211
+11.6315789474
+12.3157894737
+13
+$!GlobalContour  2
+  ColorMapName = 'Small Rainbow__modified (1)'
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  3
+  ColorMapName = 'Small Rainbow__modified (1)'
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  4
+  ColorMapName = 'Small Rainbow__modified (1)'
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  5
+  ColorMapName = 'Small Rainbow__modified (1)'
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  6
+  ColorMapName = 'Small Rainbow__modified (1)'
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  7
+  ColorMapName = 'Small Rainbow__modified (1)'
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalContour  8
+  ColorMapName = 'Small Rainbow__modified (1)'
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  ColorMapFilter
+    {
+    ContinuousColor
+      {
+      CMin = 0
+      CMax = 1
+      }
+    }
+$!GlobalScatter 
+  Legend
+    {
+    XYPos
+      {
+      X = 95
+      }
+    }
+  RefScatSymbol
+    {
+    Color = Red
+    FillColor = Red
+    }
+$!FieldMap  [1]
+  Mesh
+    {
+    Color = Red
+    }
+  Contour
+    {
+    ContourType = Flood
+    Color = Red
+    LineThickness = 0.4
+    UseLightingEffect = Yes
+    }
+  Vector
+    {
+    Color = Red
+    }
+  Scatter
+    {
+    Color = Red
+    }
+  Shade
+    {
+    Color = White
+    }
+  EdgeLayer
+    {
+    Show = Yes
+    Color = Red
+    }
+  Points
+    {
+    PointsToPlot = SurfaceNodes
+    }
+  Surfaces
+    {
+    SurfacesToPlot = KPlanes
+    }
+  VolumeMode
+    {
+    VolumeObjectsToPlot
+      {
+      ShowIsosurfaces = No
+      ShowSlices = No
+      ShowStreamtraces = No
+      }
+    }
+$!TwoDAxis 
+  XDetail
+    {
+    VarNum = 1
+    }
+  YDetail
+    {
+    VarNum = 2
+    }
+$!View Fit
+$!TwoDAxis 
+  DepXToYRatio = 1
+  ViewportPosition
+    {
+    Y2 = 83.322
+    }
+  ViewportTopSnapTarget = 83.322
+$!TwoDAxis 
+  XDetail
+    {
+    CoordScale = Linear
+    RangeMin = 0
+    RangeMax = 6
+    AutoGrid = No
+    GRSpacing = 2
+    Ticks
+      {
+      NumMinOrTicks = 0
+      }
+    TickLabel
+      {
+      TextShape
+        {
+        Height = 6
+        }
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'X'
+      TextShape
+        {
+        Height = 6.6
+        }
+      }
+    }
+$!TwoDAxis 
+  YDetail
+    {
+    CoordScale = Linear
+    RangeMin = 0.0062500000000000003469
+    RangeMax = 5.1491244009696979234
+    AutoGrid = No
+    GRSpacing = 2
+    Ticks
+      {
+      NumMinOrTicks = 0
+      }
+    TickLabel
+      {
+      TextShape
+        {
+        Height = 6
+        }
+      }
+    Title
+      {
+      TitleMode = UseText
+      Text = 'Y'
+      TextShape
+        {
+        Height = 6.6
+        }
+      }
+    }
+$!IsoSurfaceAttributes  1
+  ObeySourceZoneBlanking = No
+  IsoSurfaceSelection = OneSpecificValue
+  Isovalue1 = 12.9359873493
+  Isovalue2 = 25.4720358704
+  Isovalue3 = 38.0080843914
+  SurfaceGenerationMethod = AllTriangles
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  2
+  ObeySourceZoneBlanking = No
+  DefinitionContourGroup = 2
+  IsoSurfaceSelection = OneSpecificValue
+  SurfaceGenerationMethod = AllTriangles
+  Contour
+    {
+    LineContourGroup = 2
+    FloodColoring = Group2
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  3
+  ObeySourceZoneBlanking = No
+  DefinitionContourGroup = 3
+  IsoSurfaceSelection = OneSpecificValue
+  SurfaceGenerationMethod = AllTriangles
+  Contour
+    {
+    LineContourGroup = 3
+    FloodColoring = Group3
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  4
+  ObeySourceZoneBlanking = No
+  DefinitionContourGroup = 4
+  IsoSurfaceSelection = OneSpecificValue
+  SurfaceGenerationMethod = AllTriangles
+  Contour
+    {
+    LineContourGroup = 4
+    FloodColoring = Group4
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  5
+  ObeySourceZoneBlanking = No
+  DefinitionContourGroup = 5
+  IsoSurfaceSelection = OneSpecificValue
+  SurfaceGenerationMethod = AllTriangles
+  Contour
+    {
+    LineContourGroup = 5
+    FloodColoring = Group5
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  6
+  ObeySourceZoneBlanking = No
+  DefinitionContourGroup = 6
+  IsoSurfaceSelection = OneSpecificValue
+  SurfaceGenerationMethod = AllTriangles
+  Contour
+    {
+    LineContourGroup = 6
+    FloodColoring = Group6
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  7
+  ObeySourceZoneBlanking = No
+  DefinitionContourGroup = 7
+  IsoSurfaceSelection = OneSpecificValue
+  SurfaceGenerationMethod = AllTriangles
+  Contour
+    {
+    LineContourGroup = 7
+    FloodColoring = Group7
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!IsoSurfaceAttributes  8
+  ObeySourceZoneBlanking = No
+  DefinitionContourGroup = 8
+  IsoSurfaceSelection = OneSpecificValue
+  SurfaceGenerationMethod = AllTriangles
+  Contour
+    {
+    LineContourGroup = 8
+    FloodColoring = Group8
+    }
+  Effects
+    {
+    LightingEffect = Gouraud
+    }
+$!SliceAttributes  1
+  ObeySourceZoneBlanking = No
+  PrimaryPosition
+    {
+    X = 0
+    Y = 0
+    Z = 0
+    I = 1
+    J = 1
+    K = 1
+    }
+  EdgeLayer
+    {
+    Show = No
+    }
+  SliceConstraint
+    {
+    Include = No
+    Origin
+      {
+      X = 0
+      Y = 0
+      Z = 0
+      }
+    BoxDimension
+      {
+      X = 0
+      Y = 0
+      Z = 0
+      }
+    }
+$!SliceAttributes  2
+  ObeySourceZoneBlanking = No
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+$!SliceAttributes  3
+  ObeySourceZoneBlanking = No
+  SliceSurface = ZPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+$!SliceAttributes  4
+  ObeySourceZoneBlanking = No
+  EdgeLayer
+    {
+    Show = No
+    }
+$!SliceAttributes  5
+  ObeySourceZoneBlanking = No
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+$!SliceAttributes  6
+  ObeySourceZoneBlanking = No
+  SliceSurface = ZPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+$!SliceAttributes  7
+  ObeySourceZoneBlanking = No
+  EdgeLayer
+    {
+    Show = No
+    }
+$!SliceAttributes  8
+  ObeySourceZoneBlanking = No
+  SliceSurface = YPlanes
+  EdgeLayer
+    {
+    Show = No
+    }
+$!StreamAttributes 
+  ObeySourceZoneBlanking = No
+  StreamTiming
+    {
+    MarkSize = 1
+    MarkSymbol
+      {
+      GeomShape = Sphere
+      }
+    }
+  MaxSteps = 10000
+$!FieldLayers 
+  ShowMesh = No
+  ShowContour = Yes
+  ShowEdge = No
+$!StreamtraceLayers 
+  Show = No
+$!FrameControl ActivateByNumber
+  Frame = 1
+$!SetStyleBase Config

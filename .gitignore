@@ -1,0 +1,15 @@
+# build products
+a
+*.o
+*.mod
+# run output
+*.dat
+fort.*
+output/
+runs/
+out/
+results_2D-vortex-accuracy/*
+!results_2D-vortex-accuracy/.gitkeep
+# editor / OS
+*~
+.DS_Store
